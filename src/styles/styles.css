@@ -5,3 +5,10 @@
 .fondo-verde{
     background-color: aquamarine;
 }
+
+.button{
+    background-color: coral;
+    cursor: pointer;
+    padding: 3px;
+    border:1px solid gray;
+}

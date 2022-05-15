@@ -1,29 +1,30 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
+import Button from '../components/Button';
 
 const Index = () => {
-  const [variable1, setVariable1] = useState('hola mundo soy un estado')
-  const [valorInput, setValorInput] = useState()
+  const [valor1, setValor1] = useState(0);
+  const [valor2, setValor2] = useState(0);
+  const [suma, setSuma] = useState(0)
 
-  const funcionClick = () => {
-    setVariable1(valorInput)
-  }
-  const cambioInput = (e) => {
-    setValorInput(e.target.value)
-  }
+  useEffect(()=>{
+    console.log('cambió alguno de los valores y ya son:', 'valor1: ', valor1, 'valor2: ', valor2);
+    setSuma(valor1+valor2)
+  },[valor1, valor2])
 
   return (
     <div>
-      <div className='fondo-verde'>
-        <span>El valor de la variable es:</span>
-        {variable1}
-      </div>
-      <input
-        value={valorInput}
-        onChange={cambioInput}
-        type="text"
-        placeholder='Ingrese el nuevo valor para la variable'
+      <input value={valor1} 
+        onChange={(e)=>setValor1(parseInt(e.target.value))} 
+        placeholder='valor 1' 
+        type="number" 
       />
-      <button onClick={funcionClick}>Haz click acá</button>
+      <input value={valor2} 
+        onChange={(e)=>setValor2(parseInt(e.target.value))} 
+        placeholder='valor 2' 
+        type="number" 
+      />
+      <span>La suma de los valores 1 y 2 es: {suma}</span>
+      <Button />
     </div>
   )
 }
