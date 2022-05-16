@@ -1,14 +1,13 @@
 import React from 'react'
 import { Outlet } from 'react-router-dom'
-import Sidebar from '../components/Sidebar'
 
-const Layout = () => {
+const LayoutAdmin = () => {
   return (
     <div>
-        <Sidebar />
+        Este es el navbar
         <Outlet />
     </div>
   )
 }
 
-export default Layout
+export default LayoutAdmin

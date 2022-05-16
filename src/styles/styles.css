@@ -12,3 +12,18 @@
     padding: 3px;
     border:1px solid gray;
 }
+
+.container{
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    padding: 30px;
+}
+
+.fondo-claro{
+    background-color: rgb(207, 204, 204);
+}
+
+.fondo-oscuro{
+    background-color: rgb(90, 89, 89);
+}
